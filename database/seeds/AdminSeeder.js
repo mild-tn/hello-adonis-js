@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| DatabaseSeeder
+| AdminSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -12,14 +12,15 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use("Factory");
-const CompetitorSeeder = require("./CompetitorSeeder");
-const AdminSeeder = require("./AdminSeeder");
+const Database = use("Database");
 
-class DatabaseSeeder {
-  async run() {
-    await CompetitorSeeder.run();
-    await AdminSeeder.run();
+class AdminSeeder {
+  static async run() {
+    await Database.table("admins").insert({
+      username: "helloworld",
+      password: "passwordIsSecure"
+    });
   }
 }
 
-module.exports = DatabaseSeeder;
+module.exports = AdminSeeder;
