@@ -18,3 +18,5 @@ const Route = use("Route");
 
 Route.on("/").render("welcome");
 Route.post("/loginusername", "UserController.createUser");
+Route.get("/competitor", "CompetitorController.getCompetitors");
+Route.post("/vote", "UserController.voteCompetitors");
