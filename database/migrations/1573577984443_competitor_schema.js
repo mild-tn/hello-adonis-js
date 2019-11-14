@@ -12,6 +12,7 @@ class CompetitorSchema extends Schema {
       table.string("university");
       table.string("like");
       table.string("share");
+      table.integer("total");
       table.timestamps();
     });
   }
